@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Les As de la Fête</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCb4sffzHb7L_UkbjQ09TKv2q0BJevffgs",
+      authDomain: "lesasdelafete-fef84.firebaseapp.com",
+      projectId: "lesasdelafete-fef84",
+      storageBucket: "lesasdelafete-fef84.appspot.com",
+      messagingSenderId: "594296496061",
+      appId: "1:594296496061:web:6c1ab751ee3be145773cd4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "admin-login.html";
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const logoutBtn = document.getElementById("logout-btn");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", async () => {
+          await signOut(auth);
+          window.location.href = "admin-login.html";
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Les As de la Fête" class="logo small">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="devis.html">Demande de devis</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="panier.html">Panier</a></li>
+      </ul>
+    </nav>
+    <button id="logout-btn" class="btn">Se déconnecter</button>
+  </header>
+
+  <main class="admin-container">
+    <h1>Gestion du site</h1>
+    <section>
+      <h2>Ajouter un produit</h2>
+      <form id="ajout-produit-form">
+        <input type="text" id="nom-produit" placeholder="Nom du produit" required>
+        <input type="number" id="prix-produit" placeholder="Prix (€)" required>
+        <input type="text" id="categorie-produit" placeholder="Catégorie (ex: Photomaton)" required>
+        <textarea id="description-produit" placeholder="Description"></textarea>
+        <input type="file" id="image-produit" accept="image/*">
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Produits existants</h2>
+      <div id="liste-produits">
+        <!-- Liste des produits chargée dynamiquement -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Les As de la Fête. Tous droits réservés.</p>
+  </footer>
+
+  <script src="admin.js" type="module"></script>
+</body>
+</html>
