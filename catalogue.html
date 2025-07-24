@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue - Les As de la Fête</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <img src="images/logo.png" alt="Logo Les As de la Fête" class="logo small">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="btn-nav">Accueil</a></li>
+          <li><a href="catalogue.html" class="btn-nav">Catalogue</a></li>
+          <li><a href="devis.html" class="btn-nav">Devis</a></li>
+          <li><a href="contact.html" class="btn-nav">Contact</a></li>
+          <li><a href="admin.html" class="btn-nav">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalogue-section">
+      <h1>Catalogue</h1>
+
+      <input type="text" id="searchBar" placeholder="Rechercher un produit..." class="search-bar" />
+
+      <div class="catalogue" id="catalogue">
+        <!-- Produits -->
+        <div class="produit" data-nom="photomaton numérique illimité">
+          <img src="images/photomaton.png" alt="Photomaton">
+          <h2>Photomaton</h2>
+          <ul>
+            <li>Numérique illimité – 150€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Photomaton Numérique', 150)">Ajouter - 150€</button>
+        </div>
+		
+		<div class="produit" data-nom="photomaton 200 impressions">
+          <img src="images/photomaton.png" alt="Photomaton">
+          <h2>Photomaton</h2>
+          <ul>
+            <li>200 impressions 10x15cm – 250€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Photomaton 200 impressions', 250)">Ajouter - 250€</button>
+        </div>
+		
+		<div class="produit" data-nom="photomaton 400 impressions">
+          <img src="images/photomaton.png" alt="Photomaton">
+          <h2>Photomaton</h2>
+          <ul>
+            <li>400 impressions 10x15cm – 300€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Photomaton 400 impressions', 300)">Ajouter - 300€</button>
+        </div>
+		
+		
+
+        <div class="produit" data-nom="lumières photomaton">
+          <img src="images/lumieres.jpg" alt="Lumières">
+          <h2>Lumières photomaton</h2>
+          <p>Améliore la qualité des photos</p>
+          <button onclick="ajouterAuPanier('Lumières photomaton', 25)">Ajouter - 25€</button>
+        </div>
+
+        <div class="produit" data-nom="arches arche table voutée rectangle ronde">
+          <img src="images/arches.jpg" alt="Arches">
+          <h2>Arche de table</h2>
+          <ul>
+            <li>Arche de table – 15€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Arche de table', 15)">Ajouter - 15€</button>
+        </div>
+		
+		<div class="produit" data-nom="arches arche table voutée rectangle ronde">
+          <img src="images/arches.jpg" alt="Arches">
+          <h2>Arche voutée</h2>
+          <ul>
+            <li>Arche voutée – 15€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Arche voutée', 15)">Ajouter - 15€</button>
+        </div>
+		
+		<div class="produit" data-nom="arches arche table voutée rectangle ronde">
+          <img src="images/arches.jpg" alt="Arches">
+          <h2>Arche rectangle</h2>
+          <ul>
+            <li>Arche rectangle – 25€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Arche rectangle', 25)">Ajouter - 25€</button>
+        </div>
+		
+		<div class="produit" data-nom="arches arche table voutée rectangle ronde">
+          <img src="images/arches.jpg" alt="Arches">
+          <h2>Arche ronde</h2>
+          <ul>
+            <li>Arche ronde – 25€</li>
+          </ul>
+          <button onclick="ajouterAuPanier('Arche ronde', 25)">Ajouter - 25€</button>
+        </div>
+		
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Les As de la Fête. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('searchBar').addEventListener('input', function () {
+      const search = this.value.toLowerCase();
+      const produits = document.querySelectorAll('.produit');
+
+      produits.forEach(produit => {
+        const nom = produit.getAttribute('data-nom');
+        if (nom.includes(search)) {
+          produit.style.display = 'block';
+        } else {
+          produit.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande de devis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <img src="images/logo.png" alt="Logo Les As de la Fête" class="logo small" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="btn-nav">Accueil</a></li>
+          <li><a href="catalogue.html" class="btn-nav">Catalogue</a></li>
+          <li><a href="devis.html" class="btn-nav">Devis</a></li>
+          <li><a href="contact.html" class="btn-nav">Contact</a></li>
+          <li><a href="admin.html" class="btn-nav">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+   <Center> <h1>Demande de devis</h1>
+
+    <!-- Résumé du panier -->
+    <section id="panier-resume">
+      <h2>Votre Panier</h2>
+      <div id="panier-items"></div>
+	  <p id="total-prix"></p>
+</center>
+   
+    </section>
+
+    <!-- Formulaire de demande de devis -->
+    <form action="https://formsubmit.co/lesasdelafete.contact@gmail.com" method="POST">
+  <input type="text" name="nom" placeholder="Nom" required>
+  <input type="text" name="prenom" placeholder="Prénom" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="tel" name="telephone" placeholder="Téléphone" required>
+      <label for="date_evenement">Date de l'évènement :</label>
+      <input type="date" name="date_evenement" required>
+  <textarea name="remarques" placeholder="Remarques ou questions"></textarea>
+  <button type="submit">Envoyer la demande</button>
+
+      <p><strong>Caution :</strong> Un montant est demandé selon les articles loués. Celui-ci vous sera rendu lors du démontage si tout est rendu en létat de départ</p>
+      
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Les As de la Fête. Tous droits réservés.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
