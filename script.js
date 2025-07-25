@@ -81,3 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
     afficherPanier();
   }
 });
+function changerImage(button, direction) {
+  const carousel = button.closest('.carousel');
+  const images = carousel.querySelectorAll('.carousel-image');
+  let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+
+  images[currentIndex].classList.remove('active');
+
+  let nextIndex = (currentIndex + direction + images.length) % images.length;
+  images[nextIndex].classList.add('active');
+}
+
