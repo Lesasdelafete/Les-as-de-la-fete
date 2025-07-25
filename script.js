@@ -60,4 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
 if (document.getElementById('panier-items')) {
   afficherPanier();
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
+});
+
 
