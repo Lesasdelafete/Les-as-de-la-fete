@@ -344,7 +344,7 @@ footer {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+
   .burger {
     display: block;
     position: absolute;
@@ -375,7 +375,7 @@ footer {
    .nav-links li {
     margin: 0.5rem 1rem;
   }
-}
+
 .carousel {
   position: relative;
   width: 100%;
