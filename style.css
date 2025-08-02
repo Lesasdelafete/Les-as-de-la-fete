@@ -394,7 +394,7 @@ footer {
 .carousel-image.active {
   display: block;
 }
-
+@media (max-width: 768px) {
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -415,5 +415,5 @@ footer {
 .carousel-btn.next {
   right: 10px;
 }
-
+}
 
