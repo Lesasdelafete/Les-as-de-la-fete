@@ -479,11 +479,43 @@ footer {
   }
 
   .carousel-btn.prev {
-    left: -1000px;
+    left: -25px;
   }
 
   .carousel-btn.next {
-    right: -1000px;
+    right: -25px;
   }
+}
+@media (max-width: 480px) {
+  .carousel-btn.prev {
+    left: -15px; /* légèrement plus petit décalage sur petits écrans */
+  }
+
+  .carousel-btn.next {
+    right: -15px;
+  }
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.price {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.add-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #333;
 }
 
