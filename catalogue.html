@@ -221,7 +221,14 @@
         }
       });
     });
-	
+	 let index = 0;
+    const images = document.querySelectorAll('.carousel-image');
+
+    function changerImage(direction) {
+      images[index].classList.remove('active');
+      index = (index + direction + images.length) % images.length;
+      images[index].classList.add('active');
+    }
   </script>
   <!-- Fin de body -->
 <script src="script.js"></script>
