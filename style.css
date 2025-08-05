@@ -376,84 +376,37 @@ footer {
     margin: 0.5rem 1rem;
   }
 
-
-
-.card {
-  background: white;
-  padding: 1rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  width: 300px;
-  text-align: center;
-}
-
-.carousel-container {
+.carousel {
   position: relative;
   width: 100%;
-  height: 200px;
+  max-height: 220px;
   overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 1rem;
 }
 
 .carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .carousel-image.active {
   display: block;
 }
-
+@media (max-width: 768px) {
 .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 0.4rem 0.7rem;
-  cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 50%;
-  z-index: 2;
-}
+  padding: 0.3rem !important;
+    font-size: 1rem !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
 
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
+  .carousel-btn.prev {
+    left: 5px;
+  }
 
-.carousel-btn.prev {
-  left: 10px;
+  .carousel-btn.next {
+    right: 5px;
+  }
 }
-
-.carousel-btn.next {
-  right: 10px;
-}
-
-.product-name {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.price {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-}
-
-.add-btn {
-  background: black;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.add-btn:hover {
-  background: #333;
-}
-
 
