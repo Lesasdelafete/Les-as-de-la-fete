@@ -479,11 +479,11 @@ footer {
   }
 
   .carousel-btn.prev {
-    left: -100px;
+    left: -1000px;
   }
 
   .carousel-btn.next {
-    right: -100px;
+    right: -1000px;
   }
 }
 
