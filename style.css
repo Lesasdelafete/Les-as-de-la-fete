@@ -426,7 +426,7 @@ footer {
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
