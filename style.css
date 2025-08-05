@@ -473,9 +473,9 @@ footer {
 }
 @media (max-width: 768px) {
 .carousel-btn {
-  padding: 0.3rem !important;
+  padding: 2rem !important;
     font-size: 1rem !important;
-    background: rgba(0, 0, 0, 0.3) !important;
+    background: rgba(0, 0, 0, 0) !important;
   }
 
   .carousel-btn.prev {
