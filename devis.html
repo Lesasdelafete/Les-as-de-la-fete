@@ -6,7 +6,7 @@
   <title>Demande de devis</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<script src="script.js"></script>
+
 <body>
   <header>
     <div class="navbar">
@@ -26,14 +26,14 @@
   </header>
 
   <main class="container">
-   <Center> <h1>Demande de devis</h1>
+   <div> <h1>Demande de devis</h1>
 
     <!-- Résumé du panier -->
     <section id="panier-resume">
       <h2>Votre Panier</h2>
       <div id="panier-items"></div>
 	  <p id="total-prix"></p>
-</center>
+</div>
    
     </section>
 
@@ -47,6 +47,9 @@
       <input type="date" name="date_evenement" required>
   <textarea name="remarques" placeholder="Remarques ou questions"></textarea>
   <button type="submit">Envoyer la demande</button>
+<!-- Champs cachés pour envoyer le panier et total -->
+<input type="hidden" name="panier" id="input-panier">
+<input type="hidden" name="total" id="input-total">
 
       <p><strong>Caution :</strong> Un montant est demandé selon les articles loués. Celui-ci vous sera rendu lors du démontage si tout est rendu en létat de départ</p>
       
@@ -56,6 +59,13 @@
   <footer>
     <p>&copy; 2025 Les As de la Fête. Tous droits réservés.</p>
   </footer>
-  
+  <script src="script.js"></script>
+  <script>
+  document.querySelector('form').addEventListener('submit', function () {
+    document.getElementById('input-panier').value = document.getElementById('panier-items').innerText;
+    document.getElementById('input-total').value = document.getElementById('total-prix').innerText;
+  });
+</script>
+
 </body>
 </html>
