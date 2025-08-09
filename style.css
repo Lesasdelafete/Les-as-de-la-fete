@@ -518,4 +518,14 @@ footer {
 .add-btn:hover {
   background: #333;
 }
+.photos-page .catalogue {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.photos-page .produit img {
+  max-height: none;
+  object-fit: cover;
+}
+
 
